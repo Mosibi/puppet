@@ -7,6 +7,8 @@
 [main]
   server = <%= @fqdn %>
   environment = <%= @environment %>
+  default_manifest = $codedir/manifests
+  basemodulepath = $codedir/modules
 
 [master]
   vardir = /opt/puppetlabs/server/data/puppetserver
