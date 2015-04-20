@@ -1,6 +1,7 @@
 class puppetserver::config inherits ::puppetserver {
  file {
     [
+      '/etc/puppetlabs/code/manifests',
       '/etc/puppetlabs/code/hieradata',
       '/etc/puppetlabs/code/hieradata/environments',
     ]:
