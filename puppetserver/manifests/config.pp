@@ -26,11 +26,11 @@ class puppetserver::config inherits ::puppetserver {
     content => template('puppetserver/etc/puppetlabs/code/hiera.yaml.erb'),
   }
 
-  file { '/etc/puppetlabs/code//manifests/site.pp':
+  file { '/etc/puppetlabs/code/manifests/site.pp':
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    source  => 'puppet:///modules/puppetmaster/etc/puppetlabs/code/manifests/site.pp',
+    source  => 'puppet:///modules/puppetserver/etc/puppetlabs/code/manifests/site.pp',
   }
 
   if ! defined(File['/etc/puppetlabs/puppet/puppet.conf']) { 
