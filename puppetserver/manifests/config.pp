@@ -26,6 +26,13 @@ class puppetserver::config inherits ::puppetserver {
     content => template('puppetserver/etc/puppetlabs/code/hiera.yaml.erb'),
   }
 
+  file { '/etc/puppetlabs/code//manifests/site.pp':
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
+    source  => 'puppet:///modules/puppetmaster/etc/puppetlabs/code/manifests/site.pp',
+  }
+
   if ! defined(File['/etc/puppetlabs/puppet/puppet.conf']) { 
     file { '/etc/puppetlabs/puppet/puppet.conf':
       owner   => 'root',
@@ -35,14 +42,4 @@ class puppetserver::config inherits ::puppetserver {
       notify  => Class['::puppetserver::service'],
     }
   }
-
-
-##file { '/etc/puppet/manifests/site.pp':
-##  owner   => 'root',
-##  group   => 'root',
-##  mode    => '0644',
-##  source  => 'puppet:///modules/puppetserver/etc/puppet/manifests/site.pp',
-##  require => Class['puppetserver::install']
-##}
-
 }
