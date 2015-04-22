@@ -1,4 +1,5 @@
 forge "http://forge.puppetlabs.com"
 
 # Modules from the Puppet Forge
-mod "puppetlabs/concat"
+mod "puppetlabs/apache"
+mod "puppetlabs/ntp"
