@@ -11,3 +11,6 @@ mod "maestrodev/wget"
 
 mod "puppetserver",
   :git => "git://github.com/Mosibi/puppetserver"
+
+mod "gerrit",
+  :git => "git://github.com/datacentred/datacentred-gerrit"
